@@ -2,6 +2,45 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Github, Mail, ExternalLink, Code, Database, Smartphone, MapPin, Phone, Send } from 'lucide-react';
 import { animateTechStack, createParticleSystem, initScrollAnimations } from '../../utils/animations';
 
+// Import project images
+import workspace01 from '../../assets/workspace/workspace01.png';
+import workspace02 from '../../assets/workspace/workspace02.png';
+import workspace03 from '../../assets/workspace/workspace03.png';
+import serviceHub01 from '../../assets/serviceHub/serviceHub01.png';
+import serviceHub02 from '../../assets/serviceHub/serviceHub02.png';
+import serviceHub03 from '../../assets/serviceHub/serviceHub03.png';
+import mt301 from '../../assets/mt3/mt301.png';
+import mt302 from '../../assets/mt3/mt302.png';
+import mt303 from '../../assets/mt3/mt303.png';
+import taulead01 from '../../assets/taulead/taulead01.png';
+import taulead02 from '../../assets/taulead/taulead02.png';
+import taulead03 from '../../assets/taulead/taulead03.png';
+
+// Image mapping objects for each project
+const projectImages = {
+  // Main images (image 1)
+  mainImages: {
+    1: workspace01,
+    2: serviceHub01,
+    3: mt301,
+    4: taulead01
+  },
+  // Secondary images (image 2)
+  secondaryImages: {
+    1: workspace02,
+    2: serviceHub02,
+    3: mt302,
+    4: taulead02
+  },
+  // Tertiary images (image 3)
+  tertiaryImages: {
+    1: workspace03,
+    2: serviceHub03,
+    3: mt303,
+    4: taulead03
+  }
+};
+
 export const ProjectsSection = ({ projectsRef }) => {
   const projectsContainerRef = useRef(null);
   const techStackRef = useRef(null);
@@ -199,11 +238,7 @@ export const ProjectsSection = ({ projectsRef }) => {
                     <div className="absolute bottom-24 left-0 w-[65%] h-[60%] z-20 rounded-lg overflow-hidden shadow-lg">
                       <div className="w-full h-full object-cover bg-white/5 backdrop-blur-lg rounded-lg stretch">
                         <img
-                          src={`/src/assets/${selectedProject.id === 1 ? 'workspace' :
-                            selectedProject.id === 2 ? 'serviceHub' :
-                              selectedProject.id === 3 ? 'mt3' : 'taulead'}/${selectedProject.id === 1 ? 'workspace' :
-                                selectedProject.id === 2 ? 'serviceHub' :
-                                  selectedProject.id === 3 ? 'mt3' : 'taulead'}01.png`}
+                          src={projectImages.mainImages[selectedProject.id]}
                           alt={`${selectedProject.title} Project Screenshot 1`}
                           className="w-full h-full object-fill"
                         />
@@ -213,24 +248,16 @@ export const ProjectsSection = ({ projectsRef }) => {
                     {/* Top right image - positioned at the top right */}
                     <div className="absolute top-0 right-0 w-[60%] h-[45%] z-10 rounded-lg overflow-hidden shadow-lg">
                       <img
-                        src={`/src/assets/${selectedProject.id === 1 ? 'workspace' :
-                          selectedProject.id === 2 ? 'serviceHub' :
-                            selectedProject.id === 3 ? 'mt3' : 'taulead'}/${selectedProject.id === 1 ? 'workspace' :
-                              selectedProject.id === 2 ? 'serviceHub' :
-                                selectedProject.id === 3 ? 'mt3' : 'taulead'}02.png`}
+                        src={projectImages.secondaryImages[selectedProject.id]}
                         alt={`${selectedProject.title} Project Screenshot 2`}
-                        className="w-full h-full object-contain  rounded-lg"
+                        className="w-full h-full object-contain rounded-lg"
                       />
                     </div>
 
                     {/* Bottom right image - positioned at the bottom right */}
                     <div className="absolute bottom-0 right-0 w-[60%] h-[45%] z-10 rounded-lg overflow-hidden shadow-lg">
                       <img
-                        src={`/src/assets/${selectedProject.id === 1 ? 'workspace' :
-                          selectedProject.id === 2 ? 'serviceHub' :
-                            selectedProject.id === 3 ? 'mt3' : 'taulead'}/${selectedProject.id === 1 ? 'workspace' :
-                              selectedProject.id === 2 ? 'serviceHub' :
-                                selectedProject.id === 3 ? 'mt3' : 'taulead'}03.png`}
+                        src={projectImages.tertiaryImages[selectedProject.id]}
                         alt={`${selectedProject.title} Project Screenshot 3`}
                         className="w-full h-full object-contain rounded-lg"
                       />
