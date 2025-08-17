@@ -90,7 +90,7 @@ const ModernPortfolio = () => {
                     <img
                         src={ProfilePic}
                         alt="Rimsha Sherwani"
-                        className="rounded-full shadow-lg object-cover w-[60px] md:w-[60px]"
+                        className="rounded-full shadow-lg object-cover w-[40px] md:w-[40px]"
                     />
                     <div className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
                         Portfolio
@@ -244,9 +244,6 @@ const ModernPortfolio = () => {
                         <a href="mailto:rimshasherwani@gmail.com" className="p-3 rounded-full bg-purple-500/10 hover:bg-purple-500/20 transition-all hover:scale-110">
                             <Mail className="h-6 w-6 text-purple-400" />
                         </a>
-                        <button className="p-3 rounded-full bg-purple-500/10 hover:bg-purple-500/20 transition-all hover:scale-110">
-                            <Download className="h-6 w-6 text-purple-400" />
-                        </button>
                     </div>
                 </div>
             </div>

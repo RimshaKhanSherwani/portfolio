@@ -265,8 +265,8 @@ export const ContactSection = ({ contactRef, formData, handleInputChange, handle
     {
       icon: MapPin,
       label: 'Location',
-      value: 'Karachi, Pakistan',
-      href: 'https://maps.google.com/?q=Karachi,Pakistan'
+      value: 'Rawalpindi, Pakistan',
+      href: 'https://maps.google.com/?q=Rawalpindi,Pakistan'
     },
     {
       icon: Github,
@@ -387,10 +387,10 @@ export const ContactSection = ({ contactRef, formData, handleInputChange, handle
               
               <div className="flex items-center gap-3">
                 <div className="w-3 h-3 bg-gradient-to-r from-green-400 to-green-500 rounded-full animate-pulse" />
-                <p className="text-white font-medium">Available for freelance opportunities</p>
+                <p className="text-white font-medium">Available for opportunities</p>
               </div>
               <p className="text-white/70 text-sm mt-2">
-                Open to remote work and interesting projects
+                Open to work and interesting projects
               </p>
             </div>
           </div>
