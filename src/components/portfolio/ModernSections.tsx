@@ -151,7 +151,7 @@ export const AboutSection = ({ aboutRef }) => {
         <div className="mb-16 block">
           <h3 className="text-2xl font-semibold mb-8 text-center text-purple-400 scroll-animate">Skills & Expertise</h3>
           <div className="minimal-card bg-purple-500/5 backdrop-blur-lg border border-purple-500/20 rounded-xl p-8 scroll-animate block relative">
-            <div className="space-y-6 block" ref={techStackRef}>
+            <div className="grid md:grid-cols-2 gap-6 block" ref={techStackRef}>
               {skills.map((skillGroup, groupIndex) => (
                 <div key={skillGroup.category} className="tech-stack-group" style={{ animationDelay: `${groupIndex * 200}ms` }}>
                   <h4 className="text-lg font-medium text-white mb-3">{skillGroup.category}</h4>
@@ -170,18 +170,6 @@ export const AboutSection = ({ aboutRef }) => {
               ))}
             </div>
             
-            {/* Tech grid in the background */}
-            <div className="tech-grid absolute bottom-4 right-4 opacity-20">
-              <div className="grid grid-cols-3 gap-1">
-                {Array.from({ length: 9 }).map((_, i) => (
-                  <div 
-                    key={i} 
-                    className="tech-grid-item w-2 h-2"
-                    style={{ animationDelay: `${i * 100}ms` }}
-                  />
-                ))}
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -217,63 +205,28 @@ export const ExperienceSection = ({ experienceRef }) => {
   
   const experiences = [
     {
-      title: "Senior Frontend Developer",
-      company: "EmbraceIT Pvt Ltd",
-      duration: "Jan 2022 - Present",
-      location: "Remote",
-      type: "Full-time",
-      achievements: [
-        "Led the frontend development of an HR management portal used by 500+ employees",
-        "Improved application performance by 40% through code optimization and lazy loading",
-        "Mentored junior developers and conducted code reviews to ensure quality standards",
-        "Implemented CI/CD pipelines that reduced deployment time by 60%"
-      ],
-      technologies: ["React", "TypeScript", "Redux", "Material UI", "Jest", "GitHub Actions"]
-    },
-    {
       title: "Frontend Developer",
-      company: "TechSolutions Inc.",
-      duration: "Mar 2020 - Dec 2021",
+      company: "EmbraceIT Pvt Ltd",
+      duration: "Jan 2024 - Present",
       location: "Islamabad, Pakistan",
       type: "Full-time",
       achievements: [
-        "Developed responsive web applications for clients in finance and healthcare sectors",
-        "Created reusable component libraries that increased development speed by 30%",
-        "Collaborated with UX designers to implement pixel-perfect interfaces",
-        "Integrated RESTful APIs and GraphQL endpoints for data fetching"
+        "Led the frontend development of an HR management portal",
+        "Improved application performance by 40% through code optimization and lazy loading",
       ],
-      technologies: ["React", "JavaScript", "CSS3", "SASS", "RESTful APIs", "Git"]
+      technologies: ["React", "TypeScript", "TailwindCSS", "Ant Design", "AntV"]
     },
     {
       title: "Web Development Intern",
-      company: "Digital Crafters",
-      duration: "Jun 2019 - Sep 2019",
+      company: "EmbraceIT Pvt Ltd",
+      duration: "July 2023 - January 2024",
       location: "Islamabad, Pakistan",
       type: "Internship",
       achievements: [
-        "Assisted in developing landing pages for marketing campaigns",
         "Learned modern frontend development practices in a professional environment",
-        "Contributed to the company's internal dashboard project"
+        "Gained hands-on experience with React and TypeScript",
       ],
-      technologies: ["HTML5", "CSS3", "JavaScript", "Bootstrap"]
-    }
-  ];
-
-  const projects = [
-    {
-      title: "HR Management Portal",
-      description: "A comprehensive HR portal with employee profiles, attendance tracking, and performance reviews",
-      technologies: ["React", "TypeScript", "Redux", "Material UI"]
-    },
-    {
-      title: "E-commerce Dashboard",
-      description: "Admin dashboard for managing products, orders, and customer data with analytics",
-      technologies: ["React", "JavaScript", "Chart.js", "Styled Components"]
-    },
-    {
-      title: "Healthcare Appointment System",
-      description: "Patient appointment scheduling and management system with doctor availability",
-      technologies: ["React", "Node.js", "MongoDB", "Express"]
+      technologies: ["React", "TypeScript", "Ant Design", "Styled Components"]
     }
   ];
 

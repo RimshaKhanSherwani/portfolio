@@ -1,37 +1,49 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Github, Mail, ExternalLink, Code, Database, Smartphone, MapPin, Phone, Send } from 'lucide-react';
-import { FloatingCube, TechGrid, CircuitPath } from './ModernSections';
 import { animateTechStack, createParticleSystem, initScrollAnimations } from '../../utils/animations';
 
 export const ProjectsSection = ({ projectsRef }) => {
   const projectsContainerRef = useRef(null);
   const techStackRef = useRef(null);
-  
+
   useEffect(() => {
     // Initialize scroll animations
     const cleanup = initScrollAnimations();
-    
+
     // Add particle system to the background
     if (projectsContainerRef.current) {
       createParticleSystem(projectsContainerRef.current, 30);
     }
-    
+
     // Animate tech stack items when they come into view
     if (techStackRef.current) {
       const techItems = techStackRef.current.querySelectorAll('.tech-item');
       animateTechStack(techItems);
     }
-    
+
     return () => {
       cleanup();
     };
   }, []);
-  
+
   const projectsData = [
     {
       id: 1,
-      title: "EquipHub - Hardware Management System",
-      description: "A comprehensive hardware management and data centralization system designed to streamline device tracking, maintenance, asset lifecycle management, and schedule management for organizations.",
+      title: "Workspace - HR portal System",
+      description: "A comprehensive HR portal system designed to streamline Human Resource Management (HRM) processes, offering features for employee management, leave tracking, attendance/checkout management.",
+      technologies: ["React", "Material UI", "Tailwind CSS", "Express.JS", "MongoDB", "Redux"],
+      category: "Full Stack",
+      icon: Database,
+      features: [
+        "Employee management",
+        "TimeOff management",
+        "Attendance/checkout management",
+      ]
+    },
+    {
+      id: 2,
+      title: "ServiceHub - IT Service Management System",
+      description: "A comprehensive IT service management system designed to streamline device tracking, maintenance, asset lifecycle management, and schedule management for organizations.",
       technologies: ["React", "Material UI", "Tailwind CSS", "Express.JS", "MongoDB", "Redux"],
       category: "Full Stack",
       icon: Database,
@@ -44,22 +56,21 @@ export const ProjectsSection = ({ projectsRef }) => {
       ]
     },
     {
-      id: 2,
-      title: "letsChat - Real-Time Messaging App",
-      description: "A modern real-time messaging application built with React and TypeScript, featuring private/group messaging, typing indicators, and responsive design for seamless communication.",
+      id: 3,
+      title: "GetMt3 - Customer Ordering Management System",
+      description: "A customer ordering management system built with React and TypeScript, offering a seamless ordering customized product experience for customers with 3D editing and 3D preview features.",
       technologies: ["React", "TypeScript", "WebSocket", "Socket.IO", "Tailwind CSS", "Node.JS"],
       category: "Real-time App",
       icon: Smartphone,
       features: [
-        "Real-time private and group messaging",
-        "Typing indicators and online status",
-        "Responsive design for all devices",
-        "Message history and persistence",
+        "Customized product experience",
+        "3D editing and preview features",
+        "Real-time ordering and payment processing",
         "User authentication and profiles"
       ]
     },
     {
-      id: 3,
+      id: 4,
       title: "tau-lead - MRP Management System",
       description: "An advanced Manufacturing Resource Planning (MRP) software designed for manufacturing businesses, offering SAP-like functionality while maintaining modularity, user-friendliness, and cost-effectiveness.",
       technologies: ["React.JS", "Ant Design", "Node/Express.JS", "SQL", "MongoDB"],
@@ -75,7 +86,7 @@ export const ProjectsSection = ({ projectsRef }) => {
     }
   ];
 
-  const [selectedProject, setSelectedProject] = useState(projectsData[0]);
+  const [selectedProject, setSelectedProject] = useState(projectsData[3]);
 
   return (
     <section id="projects" ref={projectsRef} className="py-20 bg-gray-900 relative overflow-hidden">
@@ -86,36 +97,36 @@ export const ProjectsSection = ({ projectsRef }) => {
           <svg viewBox="0 0 100 100" className="w-full h-full">
             <path d="M10,30 L40,30 L40,70 L70,70 L70,40 L90,40" className="circuit-path" />
             <circle cx="90" cy="40" r="2" className="circuit-node ping-circle" />
-            <circle cx="40" cy="30" r="2" className="circuit-node ping-circle" style={{animationDelay: '1s'}} />
-            <circle cx="40" cy="70" r="2" className="circuit-node ping-circle" style={{animationDelay: '2s'}} />
+            <circle cx="40" cy="30" r="2" className="circuit-node ping-circle" style={{ animationDelay: '1s' }} />
+            <circle cx="40" cy="70" r="2" className="circuit-node ping-circle" style={{ animationDelay: '2s' }} />
           </svg>
         </div>
-        
+
         <div className="absolute bottom-20 left-20 w-32 h-32 opacity-20">
           <svg viewBox="0 0 100 100" className="w-full h-full">
             <path d="M20,20 L80,20 L80,80 L20,80 Z" className="circuit-path" />
             <circle cx="20" cy="20" r="2" className="circuit-node ping-circle" />
-            <circle cx="80" cy="80" r="2" className="circuit-node ping-circle" style={{animationDelay: '1.5s'}} />
+            <circle cx="80" cy="80" r="2" className="circuit-node ping-circle" style={{ animationDelay: '1.5s' }} />
           </svg>
         </div>
-        
+
         {/* 3D Tech shapes */}
-        <div className="absolute top-1/4 right-1/4 tech-shape tech-shape-cube scroll-animate" style={{width: '60px', height: '60px', transform: 'rotate(15deg)'}}>
+        <div className="absolute top-1/4 right-1/4 tech-shape tech-shape-cube scroll-animate" style={{ width: '60px', height: '60px', transform: 'rotate(15deg)' }}>
           {[...Array(6)].map((_, i) => (
             <div key={i} className="tech-shape-face"></div>
           ))}
         </div>
-        
-        <div className="absolute bottom-1/3 left-1/3 tech-shape tech-shape-pyramid scroll-animate" style={{width: '50px', height: '50px', animationDelay: '0.5s'}}>
+
+        <div className="absolute bottom-1/3 left-1/3 tech-shape tech-shape-pyramid scroll-animate" style={{ width: '50px', height: '50px', animationDelay: '0.5s' }}>
           {[...Array(4)].map((_, i) => (
             <div key={i} className="tech-shape-face"></div>
           ))}
         </div>
-        
-        <div className="absolute top-2/3 right-1/3 tech-shape tech-shape-sphere scroll-animate" style={{width: '40px', height: '40px', animationDelay: '1s'}}>
+
+        <div className="absolute top-2/3 right-1/3 tech-shape tech-shape-sphere scroll-animate" style={{ width: '40px', height: '40px', animationDelay: '1s' }}>
           <div className="tech-shape-core"></div>
           {[...Array(3)].map((_, i) => (
-            <div key={i} className="tech-shape-ring" style={{transform: `rotateX(${i * 60}deg)`}}></div>
+            <div key={i} className="tech-shape-ring" style={{ transform: `rotateX(${i * 60}deg)` }}></div>
           ))}
         </div>
       </div>
@@ -135,11 +146,10 @@ export const ProjectsSection = ({ projectsRef }) => {
             <button
               key={project.id}
               onClick={() => setSelectedProject(project)}
-              className={`px-6 py-3 rounded-lg transition-all ${
-                selectedProject.id === project.id
-                  ? "bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg"
-                  : "border border-purple-400 text-purple-400 hover:bg-purple-400 hover:text-white"
-              }`}
+              className={`px-6 py-3 rounded-lg transition-all ${selectedProject.id === project.id
+                ? "bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg"
+                : "border border-purple-400 text-purple-400 hover:bg-purple-400 hover:text-white"
+                }`}
             >
               {project.title.split(" - ")[0]}
             </button>
@@ -147,103 +157,98 @@ export const ProjectsSection = ({ projectsRef }) => {
         </div>
 
         <div className="mb-16">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <div className="bg-purple-500/5 backdrop-blur-lg border border-purple-500/20 rounded-xl p-8 h-full scroll-animate" style={{transitionDelay: '200ms'}}>
-              {/* Circuit path background for project card */}
-              <div className="absolute top-4 right-4 w-24 h-24 opacity-10 pointer-events-none">
-                <svg viewBox="0 0 100 100" className="w-full h-full">
-                  <path d="M10,10 L90,10 L90,90 L10,90 Z M30,30 L70,30 L70,70 L30,70 Z" className="circuit-path" />
-                  <circle cx="10" cy="10" r="2" className="circuit-node ping-circle" />
-                  <circle cx="90" cy="90" r="2" className="circuit-node ping-circle" style={{animationDelay: '1s'}} />
-                </svg>
-              </div>
-              
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center relative">
-                  {/* Orbiting border effect */}
-                  <div className="absolute inset-0 border border-purple-300/30 rounded-lg animate-orbit"></div>
-                  {React.createElement(selectedProject.icon, { className: "h-6 w-6 text-white" })}
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-white">{selectedProject.title}</h3>
-                  <p className="text-purple-400">{selectedProject.category}</p>
-                </div>
+          <div className="flex flex-col md:flex-row gap-8 mb-16">
+            <div className="md:w-2/5 bg-purple-500/5 backdrop-blur-lg border border-purple-500/20 rounded-xl p-8 flex flex-col scroll-animate" style={{ transitionDelay: '200ms' }}>
+              <h3 className="text-2xl font-bold mb-2 text-white">{selectedProject?.title}</h3>
+              <div className="text-purple-300 mb-2">{selectedProject?.category}</div>
+              <p className="text-gray-300 mb-6">{selectedProject?.description}</p>
+
+              <h4 className="text-lg font-semibold mb-3 text-white">Key Features</h4>
+              <div className="space-y-2 mb-6">
+                {selectedProject?.features.map((feature, index) => (
+                  <div key={index} className="flex items-start">
+                    <div className="text-purple-400 mr-2">•</div>
+                    <span className="text-gray-300">{feature}</span>
+                  </div>
+                ))}
               </div>
 
-              <p className="text-white/70 mb-6 scroll-animate" style={{transitionDelay: '300ms'}}>
-                {selectedProject.description}
-              </p>
-
-              <div className="mb-6 scroll-animate" style={{transitionDelay: '400ms'}}>
-                <h4 className="text-lg font-semibold text-white mb-3">Key Features</h4>
-                <ul className="space-y-2">
-                  {selectedProject.features.map((feature, index) => (
-                    <li key={index} className="flex items-start gap-2 scroll-animate" style={{transitionDelay: `${500 + index * 100}ms`}}>
-                      <div className="w-1.5 h-1.5 rounded-full bg-purple-400 mt-2" />
-                      <span className="text-white/70">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div>
-                <h4 className="text-lg font-semibold text-white mb-3 scroll-animate" style={{transitionDelay: '600ms'}}>Technologies</h4>
-                <div className="flex flex-wrap gap-2" ref={techStackRef}>
-                  {selectedProject.technologies.map((tech, index) => (
-                    <span
-                      key={index}
-                      className="px-3 py-1 bg-purple-500/10 border border-purple-500/30 rounded-full text-sm text-purple-400 tech-item"
-                      style={{transitionDelay: `${700 + index * 80}ms`}}
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
+              <h4 className="text-lg font-semibold mb-3 text-white">Technologies</h4>
+              <div className="flex flex-wrap gap-2 mb-6">
+                {selectedProject?.technologies.map((tech, index) => (
+                  <span key={index} className="bg-purple-500/10 text-purple-300 px-3 py-1 rounded-full text-sm">
+                    {tech}
+                  </span>
+                ))}
               </div>
             </div>
 
-            <div className="bg-purple-500/5 backdrop-blur-lg border border-purple-500/20 rounded-xl p-8 flex flex-col scroll-animate" style={{transitionDelay: '300ms'}}>
+            <div className="md:w-3/5 bg-purple-500/5 backdrop-blur-lg border border-purple-500/20 rounded-xl p-8 flex flex-col scroll-animate" style={{ transitionDelay: '300ms' }}>
               {/* 3D tech shape in the corner */}
-              <div className="absolute top-4 left-4 tech-shape tech-shape-prism" style={{width: '40px', height: '40px', opacity: 0.2}}>
+              <div className="absolute top-4 left-4 tech-shape tech-shape-prism" style={{ width: '40px', height: '40px', opacity: 0.2 }}>
                 {[...Array(5)].map((_, i) => (
                   <div key={i} className="tech-shape-face"></div>
                 ))}
               </div>
-              
-              <div className="flex-1">
-                <div className="aspect-video rounded-lg bg-gray-800 mb-6 overflow-hidden relative scroll-animate" style={{transitionDelay: '400ms'}}>
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-white/30 text-lg">Project Preview</div>
-                  </div>
-                  {/* Circuit path overlay */}
-                  <div className="absolute inset-0 opacity-20 pointer-events-none">
-                    <svg viewBox="0 0 100 100" className="w-full h-full">
-                      <path d="M10,50 L30,30 L70,30 L90,50 L70,70 L30,70 Z" className="circuit-path" />
-                      <circle cx="10" cy="50" r="2" className="circuit-node ping-circle" />
-                      <circle cx="90" cy="50" r="2" className="circuit-node ping-circle" style={{animationDelay: '1.5s'}} />
-                    </svg>
-                  </div>
-                  <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-gray-900 to-transparent"></div>
-                </div>
 
-                <div className="space-y-4 scroll-animate" style={{transitionDelay: '500ms'}}>
-                  <div className="h-4 bg-gray-800 rounded-full w-full"></div>
-                  <div className="h-4 bg-gray-800 rounded-full w-3/4"></div>
-                  <div className="h-4 bg-gray-800 rounded-full w-5/6"></div>
-                </div>
-              </div>
+              <div className="flex-1 relative" style={{ minHeight: '300px' }}>
+                {/* Project Images - Dynamic based on selected project */}
+                {selectedProject && (
+                  <div className="relative h-full">
+                    {/* Main large image - positioned at the bottom left */}
+                    <div className="absolute bottom-24 left-0 w-[65%] h-[60%] z-20 rounded-lg overflow-hidden shadow-lg">
+                      <div className="w-full h-full object-cover bg-white/5 backdrop-blur-lg rounded-lg stretch">
+                        <img
+                          src={`/src/assets/${selectedProject.id === 1 ? 'workspace' :
+                            selectedProject.id === 2 ? 'serviceHub' :
+                              selectedProject.id === 3 ? 'mt3' : 'taulead'}/${selectedProject.id === 1 ? 'workspace' :
+                                selectedProject.id === 2 ? 'serviceHub' :
+                                  selectedProject.id === 3 ? 'mt3' : 'taulead'}01.png`}
+                          alt={`${selectedProject.title} Project Screenshot 1`}
+                          className="w-full h-full object-fill"
+                        />
+                      </div>
+                    </div>
 
-              <div className="mt-8 flex gap-4 scroll-animate" style={{transitionDelay: '600ms'}}>
-                <button className="flex-1 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white py-3 rounded-lg transition-all transform hover:scale-105 flex items-center justify-center gap-2">
-                  <Github className="h-4 w-4" />
-                  View Code
-                </button>
-                <button className="flex-1 border border-purple-400 text-purple-400 hover:bg-purple-400 hover:text-white py-3 rounded-lg transition-all flex items-center justify-center gap-2">
-                  <ExternalLink className="h-4 w-4" />
-                  Live Demo
-                </button>
+                    {/* Top right image - positioned at the top right */}
+                    <div className="absolute top-0 right-0 w-[60%] h-[45%] z-10 rounded-lg overflow-hidden shadow-lg">
+                      <img
+                        src={`/src/assets/${selectedProject.id === 1 ? 'workspace' :
+                          selectedProject.id === 2 ? 'serviceHub' :
+                            selectedProject.id === 3 ? 'mt3' : 'taulead'}/${selectedProject.id === 1 ? 'workspace' :
+                              selectedProject.id === 2 ? 'serviceHub' :
+                                selectedProject.id === 3 ? 'mt3' : 'taulead'}02.png`}
+                        alt={`${selectedProject.title} Project Screenshot 2`}
+                        className="w-full h-full object-contain  rounded-lg"
+                      />
+                    </div>
+
+                    {/* Bottom right image - positioned at the bottom right */}
+                    <div className="absolute bottom-0 right-0 w-[60%] h-[45%] z-10 rounded-lg overflow-hidden shadow-lg">
+                      <img
+                        src={`/src/assets/${selectedProject.id === 1 ? 'workspace' :
+                          selectedProject.id === 2 ? 'serviceHub' :
+                            selectedProject.id === 3 ? 'mt3' : 'taulead'}/${selectedProject.id === 1 ? 'workspace' :
+                              selectedProject.id === 2 ? 'serviceHub' :
+                                selectedProject.id === 3 ? 'mt3' : 'taulead'}03.png`}
+                        alt={`${selectedProject.title} Project Screenshot 3`}
+                        className="w-full h-full object-contain rounded-lg"
+                      />
+                    </div>
+                  </div>
+                )}
+
+                {/* Circuit path overlay */}
+                <div className="absolute inset-0 opacity-10 pointer-events-none">
+                  <svg viewBox="0 0 100 100" className="w-full h-full">
+                    <path d="M10,50 L30,30 L70,30 L90,50 L70,70 L30,70 Z" className="circuit-path" />
+                    <circle cx="10" cy="50" r="2" className="circuit-node ping-circle" />
+                    <circle cx="90" cy="50" r="2" className="circuit-node ping-circle" style={{ animationDelay: '1.5s' }} />
+                  </svg>
+                </div>
               </div>
             </div>
+
           </div>
         </div>
       </div>
@@ -254,7 +259,7 @@ export const ProjectsSection = ({ projectsRef }) => {
 export const ContactSection = ({ contactRef, formData, handleInputChange, handleSubmit }) => {
   const formRef = useRef(null);
   const contactContainerRef = useRef(null);
-  
+
   const contactInfo = [
     {
       icon: Mail,
@@ -275,21 +280,21 @@ export const ContactSection = ({ contactRef, formData, handleInputChange, handle
       href: 'https://github.com/RimshaKhanSherwani'
     }
   ];
-  
+
   useEffect(() => {
     // Initialize scroll animations
     const cleanup = initScrollAnimations();
-    
+
     // Add particle system to the background
     if (contactContainerRef.current) {
       createParticleSystem(contactContainerRef.current, 25);
     }
-    
+
     return () => {
       cleanup();
     };
   }, []);
-  
+
   // Contact info is defined above
 
   return (
@@ -300,30 +305,30 @@ export const ContactSection = ({ contactRef, formData, handleInputChange, handle
         <div className="absolute top-10 left-10 w-40 h-40 opacity-20">
           <svg viewBox="0 0 100 100" className="w-full h-full">
             <path d="M10,10 L90,10 L90,90 L10,90 Z" className="circuit-path" />
-            <path d="M30,30 L70,30 L70,70 L30,70 Z" className="circuit-path" style={{animationDelay: '0.5s'}} />
+            <path d="M30,30 L70,30 L70,70 L30,70 Z" className="circuit-path" style={{ animationDelay: '0.5s' }} />
             <circle cx="10" cy="10" r="2" className="circuit-node ping-circle" />
-            <circle cx="90" cy="90" r="2" className="circuit-node ping-circle" style={{animationDelay: '1s'}} />
-            <circle cx="30" cy="30" r="2" className="circuit-node ping-circle" style={{animationDelay: '1.5s'}} />
+            <circle cx="90" cy="90" r="2" className="circuit-node ping-circle" style={{ animationDelay: '1s' }} />
+            <circle cx="30" cy="30" r="2" className="circuit-node ping-circle" style={{ animationDelay: '1.5s' }} />
           </svg>
         </div>
-        
+
         <div className="absolute bottom-20 right-20 w-32 h-32 opacity-20">
           <svg viewBox="0 0 100 100" className="w-full h-full">
             <path d="M20,50 C20,20 80,20 80,50 C80,80 20,80 20,50 Z" className="circuit-path" />
             <circle cx="20" cy="50" r="2" className="circuit-node ping-circle" />
-            <circle cx="80" cy="50" r="2" className="circuit-node ping-circle" style={{animationDelay: '1.2s'}} />
+            <circle cx="80" cy="50" r="2" className="circuit-node ping-circle" style={{ animationDelay: '1.2s' }} />
           </svg>
         </div>
-        
+
         {/* 3D Tech shapes */}
-        <div className="absolute top-1/3 left-1/4 tech-shape tech-shape-sphere scroll-animate" style={{width: '50px', height: '50px'}}>
+        <div className="absolute top-1/3 left-1/4 tech-shape tech-shape-sphere scroll-animate" style={{ width: '50px', height: '50px' }}>
           <div className="tech-shape-core"></div>
           {[...Array(3)].map((_, i) => (
-            <div key={i} className="tech-shape-ring" style={{transform: `rotateX(${i * 60}deg)`}}></div>
+            <div key={i} className="tech-shape-ring" style={{ transform: `rotateX(${i * 60}deg)` }}></div>
           ))}
         </div>
-        
-        <div className="absolute bottom-1/4 right-1/3 tech-shape tech-shape-pyramid scroll-animate" style={{width: '40px', height: '40px', animationDelay: '0.7s'}}>
+
+        <div className="absolute bottom-1/4 right-1/3 tech-shape tech-shape-pyramid scroll-animate" style={{ width: '40px', height: '40px', animationDelay: '0.7s' }}>
           {[...Array(4)].map((_, i) => (
             <div key={i} className="tech-shape-face"></div>
           ))}
@@ -340,7 +345,7 @@ export const ContactSection = ({ contactRef, formData, handleInputChange, handle
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        <div className="grid lg:grid-cols-1 gap-12 max-w-6xl mx-auto">
           <div className="space-y-8">
             <div>
               <h3 className="text-2xl font-semibold mb-6 text-purple-400">Let's Connect</h3>
@@ -348,14 +353,14 @@ export const ContactSection = ({ contactRef, formData, handleInputChange, handle
                 Ready to collaborate on your next project? Let's discuss how we can work together.
               </p>
             </div>
-            
+
             <div className="space-y-4">
               {contactInfo.map((contact, index) => (
-                <a 
+                <a
                   href={contact.href}
-                  key={index} 
-                  className="bg-purple-500/5 backdrop-blur-lg border border-purple-500/20 rounded-xl p-4 flex items-center gap-4 group hover:border-purple-400 transition-all scroll-animate" 
-                  style={{transitionDelay: `${200 + index * 100}ms`}}
+                  key={index}
+                  className="bg-purple-500/5 backdrop-blur-lg border border-purple-500/20 rounded-xl p-4 flex items-center gap-4 group hover:border-purple-400 transition-all scroll-animate"
+                  style={{ transitionDelay: `${200 + index * 100}ms` }}
                 >
                   <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center relative">
                     {/* Orbiting border effect */}
@@ -375,16 +380,16 @@ export const ContactSection = ({ contactRef, formData, handleInputChange, handle
               ))}
             </div>
 
-            <div className="bg-purple-500/5 backdrop-blur-lg border border-purple-500/20 rounded-xl p-6 scroll-animate" style={{transitionDelay: '500ms'}}>
+            <div className="bg-purple-500/5 backdrop-blur-lg border border-purple-500/20 rounded-xl p-6 scroll-animate" style={{ transitionDelay: '500ms' }}>
               {/* Circuit path background */}
               <div className="absolute top-4 right-4 w-20 h-20 opacity-10 pointer-events-none">
                 <svg viewBox="0 0 100 100" className="w-full h-full">
                   <path d="M20,20 C20,50 80,50 80,80" className="circuit-path" />
                   <circle cx="20" cy="20" r="2" className="circuit-node ping-circle" />
-                  <circle cx="80" cy="80" r="2" className="circuit-node ping-circle" style={{animationDelay: '1.2s'}} />
+                  <circle cx="80" cy="80" r="2" className="circuit-node ping-circle" style={{ animationDelay: '1.2s' }} />
                 </svg>
               </div>
-              
+
               <div className="flex items-center gap-3">
                 <div className="w-3 h-3 bg-gradient-to-r from-green-400 to-green-500 rounded-full animate-pulse" />
                 <p className="text-white font-medium">Available for opportunities</p>
@@ -395,19 +400,18 @@ export const ContactSection = ({ contactRef, formData, handleInputChange, handle
             </div>
           </div>
 
-          <div>
-            <div className="bg-purple-500/5 backdrop-blur-lg border border-purple-500/20 rounded-xl p-8 scroll-animate" style={{transitionDelay: '300ms'}}>
-              {/* 3D tech shape in the corner */}
-              <div className="absolute top-4 right-4 tech-shape tech-shape-cube" style={{width: '30px', height: '30px', opacity: 0.2}}>
+          {/* <div>
+            <div className="bg-purple-500/5 backdrop-blur-lg border border-purple-500/20 rounded-xl p-8 scroll-animate" style={{ transitionDelay: '300ms' }}>
+              <div className="absolute top-4 right-4 tech-shape tech-shape-cube" style={{ width: '30px', height: '30px', opacity: 0.2 }}>
                 {[...Array(6)].map((_, i) => (
                   <div key={i} className="tech-shape-face"></div>
                 ))}
               </div>
-              
+
               <h3 className="text-2xl font-semibold mb-6 text-purple-400">Send a Message</h3>
-              
+
               <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
-                <div className="scroll-animate" style={{transitionDelay: '400ms'}}>
+                <div className="scroll-animate" style={{ transitionDelay: '400ms' }}>
                   <label htmlFor="name" className="block text-sm font-medium mb-2 text-white">
                     Your Name
                   </label>
@@ -423,7 +427,7 @@ export const ContactSection = ({ contactRef, formData, handleInputChange, handle
                   />
                 </div>
 
-                <div className="scroll-animate" style={{transitionDelay: '500ms'}}>
+                <div className="scroll-animate" style={{ transitionDelay: '500ms' }}>
                   <label htmlFor="email" className="block text-sm font-medium mb-2 text-white">
                     Email Address
                   </label>
@@ -439,7 +443,7 @@ export const ContactSection = ({ contactRef, formData, handleInputChange, handle
                   />
                 </div>
 
-                <div className="scroll-animate" style={{transitionDelay: '600ms'}}>
+                <div className="scroll-animate" style={{ transitionDelay: '600ms' }}>
                   <label htmlFor="message" className="block text-sm font-medium mb-2 text-white">
                     Message
                   </label>
@@ -455,17 +459,19 @@ export const ContactSection = ({ contactRef, formData, handleInputChange, handle
                   />
                 </div>
 
-                <button 
+                <button
                   type="submit"
                   className="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white py-3 rounded-lg transition-all transform hover:scale-105 flex items-center justify-center gap-2 scroll-animate"
-                  style={{transitionDelay: '700ms'}}
+                  style={{ transitionDelay: '700ms' }}
                 >
                   <Send className="h-4 w-4" />
                   Send Message
                 </button>
               </form>
             </div>
-          </div>
+          </div> */}
+
+
         </div>
       </div>
     </section>

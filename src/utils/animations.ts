@@ -1,7 +1,5 @@
-// Import anime.js using CommonJS syntax to avoid ESM issues
 import * as animeJs from 'animejs';
 
-// Use destructuring to get the methods we need
 const { animate, stagger } = animeJs;
 
 export const animateFloatingShape = (element: HTMLElement, options = {}) => {
