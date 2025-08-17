@@ -41,20 +41,22 @@ const projectImages = {
   }
 };
 
+const getProjectImage = (imageType, projectId) => {
+  const imageMap = projectImages[imageType];
+  return imageMap[projectId] || Object.values(imageMap)[0];
+};
+
 export const ProjectsSection = ({ projectsRef }) => {
   const projectsContainerRef = useRef(null);
   const techStackRef = useRef(null);
 
   useEffect(() => {
-    // Initialize scroll animations
     const cleanup = initScrollAnimations();
 
-    // Add particle system to the background
     if (projectsContainerRef.current) {
       createParticleSystem(projectsContainerRef.current, 30);
     }
 
-    // Animate tech stack items when they come into view
     if (techStackRef.current) {
       const techItems = techStackRef.current.querySelectorAll('.tech-item');
       animateTechStack(techItems);
@@ -238,7 +240,7 @@ export const ProjectsSection = ({ projectsRef }) => {
                     <div className="absolute bottom-24 left-0 w-[65%] h-[60%] z-20 rounded-lg overflow-hidden shadow-lg">
                       <div className="w-full h-full object-cover bg-white/5 backdrop-blur-lg rounded-lg stretch">
                         <img
-                          src={projectImages.mainImages[selectedProject.id]}
+                          src={getProjectImage('mainImages', selectedProject.id)}
                           alt={`${selectedProject.title} Project Screenshot 1`}
                           className="w-full h-full object-fill"
                         />
@@ -248,7 +250,7 @@ export const ProjectsSection = ({ projectsRef }) => {
                     {/* Top right image - positioned at the top right */}
                     <div className="absolute top-0 right-0 w-[60%] h-[45%] z-10 rounded-lg overflow-hidden shadow-lg">
                       <img
-                        src={projectImages.secondaryImages[selectedProject.id]}
+                        src={getProjectImage('secondaryImages', selectedProject.id)}
                         alt={`${selectedProject.title} Project Screenshot 2`}
                         className="w-full h-full object-contain rounded-lg"
                       />
@@ -257,7 +259,7 @@ export const ProjectsSection = ({ projectsRef }) => {
                     {/* Bottom right image - positioned at the bottom right */}
                     <div className="absolute bottom-0 right-0 w-[60%] h-[45%] z-10 rounded-lg overflow-hidden shadow-lg">
                       <img
-                        src={projectImages.tertiaryImages[selectedProject.id]}
+                        src={getProjectImage('tertiaryImages', selectedProject.id)}
                         alt={`${selectedProject.title} Project Screenshot 3`}
                         className="w-full h-full object-contain rounded-lg"
                       />
