@@ -14,4 +14,3 @@ This project is built with:
 ## Deployed App
 
 https://visionary-piroshki-1cd36c.netlify.app/
-\
