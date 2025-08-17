@@ -52,12 +52,6 @@ export const Contact = () => {
       href: "mailto:rimshasherwani@gmail.com"
     },
     {
-      icon: Phone,
-      label: "Phone",
-      value: "+92 301 0501661",
-      href: "tel:+923010501661"
-    },
-    {
       icon: MapPin,
       label: "Location",
       value: "Islamabad, Pakistan",

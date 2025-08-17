@@ -415,44 +415,6 @@ export const ExperienceSection = ({ experienceRef }) => {
             ))}
           </div>
         </div>
-
-        <div ref={projectsRef}>
-          <h3 className="text-2xl font-semibold mb-8 text-center text-purple-400 scroll-animate">Featured Projects</h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
-              <div 
-                key={project.title} 
-                className="project-card minimal-card bg-purple-500/5 backdrop-blur-lg border border-purple-500/20 rounded-xl p-6 h-full flex flex-col relative overflow-hidden"
-              >
-                {/* Circuit path in the background */}
-                <svg className="circuit-path absolute top-2 right-2 opacity-10" width="60" height="60" viewBox="0 0 100 100">
-                  <path d="M10,10 L90,10 L90,90 L10,90 Z" stroke="rgba(147, 51, 234, 0.3)" strokeWidth="1" fill="none" />
-                  <circle cx="10" cy="10" r="2" fill="rgba(168, 85, 247, 0.6)" className="animate-ping" />
-                </svg>
-                
-                <div className="flex-1">
-                  <h4 className="text-lg font-semibold mb-3 text-purple-400">{project.title}</h4>
-                  <p className="text-white/70 text-sm leading-relaxed mb-4">{project.description}</p>
-                </div>
-                
-                <div>
-                  <h5 className="font-medium mb-2 text-sm text-white">Technologies:</h5>
-                  <div className="flex flex-wrap gap-1">
-                    {project.technologies.map((tech, techIndex) => (
-                      <span 
-                        key={tech}
-                        className="tech-stack-item border border-purple-400/30 text-purple-300 px-2 py-1 rounded text-xs hover:bg-purple-400/10 transition-colors"
-                        style={{ animationDelay: `${techIndex * 100}ms` }}
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
     </section>
   );

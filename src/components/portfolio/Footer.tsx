@@ -36,11 +36,6 @@ export const Footer = () => {
                 rimshasherwani@gmail.com
               </a>
             </p>
-            <p className="text-muted-foreground">
-              <a href="tel:+923010501661" className="hover:text-primary transition-colors">
-                +92 301 0501661
-              </a>
-            </p>
           </div>
 
           {/* Divider */}

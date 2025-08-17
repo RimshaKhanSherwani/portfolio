@@ -246,56 +246,6 @@ export const ProjectsSection = ({ projectsRef }) => {
             </div>
           </div>
         </div>
-
-        <div>
-          <h3 className="text-2xl font-semibold mb-8 text-center text-purple-400">All Projects</h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projectsData.map((project) => {
-              const Icon = project.icon;
-              return (
-                <div 
-                  key={project.id} 
-                  className="bg-purple-500/5 backdrop-blur-lg border border-purple-500/20 rounded-xl p-6 h-full cursor-pointer transition-all hover:scale-105 group"
-                  onClick={() => setSelectedProject(project)}
-                >
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
-                      <Icon className="h-6 w-6 text-white" />
-                    </div>
-                    <span className="border border-purple-400/30 text-purple-300 px-2 py-1 rounded text-xs">
-                      {project.category}
-                    </span>
-                  </div>
-                  
-                  <div className="flex-1">
-                    <h4 className="text-lg font-semibold mb-2 group-hover:text-purple-400 transition-colors text-white">
-                      {project.title.split(" - ")[0]}
-                    </h4>
-                    <p className="text-white/70 text-sm leading-relaxed mb-4 line-clamp-3">
-                      {project.description}
-                    </p>
-                  </div>
-                  
-                  <div className="flex flex-wrap gap-1">
-                    {project.technologies.slice(0, 3).map((tech) => (
-                      <span 
-                        key={tech}
-                        className="border border-purple-400/30 text-purple-300 px-2 py-1 rounded text-xs"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                    {project.technologies.length > 3 && (
-                      <span className="border border-purple-400/30 text-purple-300 px-2 py-1 rounded text-xs">
-                        +{project.technologies.length - 3}
-                      </span>
-                    )}
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
       </div>
     </section>
   );
@@ -311,12 +261,6 @@ export const ContactSection = ({ contactRef, formData, handleInputChange, handle
       label: 'Email',
       value: 'rimshasherwani@gmail.com',
       href: 'mailto:rimshasherwani@gmail.com'
-    },
-    {
-      icon: Phone,
-      label: 'Phone',
-      value: '+92 301 0501661',
-      href: 'tel:+923010501661'
     },
     {
       icon: MapPin,

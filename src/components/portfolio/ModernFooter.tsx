@@ -93,11 +93,6 @@ export const Footer = () => {
               rimshasherwani@gmail.com
             </a>
           </p>
-          <p className="text-white/70">
-            <a href="tel:+923010501661" className="hover:text-purple-400 transition-colors">
-              +92 301 0501661
-            </a>
-          </p>
         </div>
 
         <div className="w-24 h-px bg-gradient-to-r from-purple-400 to-pink-400 mx-auto mb-8 scroll-animate" style={{transitionDelay: '400ms'}} />

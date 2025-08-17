@@ -152,38 +152,6 @@ export const Experience = () => {
               ))}
             </div>
           </div>
-
-          {/* Projects Section */}
-          <div>
-            <h3 className="text-2xl font-semibold mb-8 text-center gradient-text">Featured Projects</h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {projects.map((project, index) => (
-                <Card key={project.title} className={`glass-card hover-lift border-0 shadow-lg h-full transition-all duration-500 ${isVisible ? 'animate-scale-in' : ''}`} style={{ animationDelay: `${(index + 2) * 150}ms` }}>
-                  <CardContent className="p-6 h-full flex flex-col">
-                    <div className="flex-1">
-                      <h4 className="text-lg font-semibold mb-3 gradient-text">{project.title}</h4>
-                      <p className="text-muted-foreground text-sm leading-relaxed mb-4">{project.description}</p>
-                    </div>
-                    
-                    <div>
-                      <h5 className="font-medium mb-2 text-sm">Technologies:</h5>
-                      <div className="flex flex-wrap gap-1">
-                        {project.technologies.map((tech) => (
-                          <Badge 
-                            key={tech}
-                            variant="outline" 
-                            className="text-xs border-primary/30 text-primary hover:bg-primary/10"
-                          >
-                            {tech}
-                          </Badge>
-                        ))}
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
         </div>
       </div>
     </section>
