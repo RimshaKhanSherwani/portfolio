@@ -101,6 +101,12 @@ export const Navigation = () => {
               >
                 <Mail className="h-4 w-4 text-foreground" />
               </a>
+              <a
+                href="/modern"
+                className="px-3 py-1 rounded-lg glass-card hover-lift transition-all duration-300 text-xs font-medium"
+              >
+                Modern Portfolio
+              </a>
             </div>
 
             {/* Mobile Menu Button */}
