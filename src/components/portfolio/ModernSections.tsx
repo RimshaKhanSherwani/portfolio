@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { Code, Users, Lightbulb, Target, Calendar, MapPin, Briefcase } from 'lucide-react';
+import { Code, Users, Calendar, MapPin, Briefcase } from 'lucide-react';
 import { animateTextReveal, animateTechStack } from '../../utils/animations';
 
 // Reusable animation components
@@ -71,12 +71,10 @@ export const AboutSection = ({ aboutRef }) => {
   const highlights = [
     { icon: Code, title: "3+ Years Experience", description: "Building modern, responsive web applications" },
     { icon: Users, title: "Team Collaboration", description: "Cross-team collaboration and agile practices" },
-    { icon: Lightbulb, title: "Problem Solver", description: "Transforming complex designs into intuitive UX" },
-    { icon: Target, title: "Performance Focused", description: "High-performance, scalable frontend solutions" }
   ];
 
   return (
-    <section id="about" ref={aboutRef} className="py-20 bg-gray-900 relative overflow-hidden">
+    <section id="about" ref={aboutRef} className="py-20 bg-gray-900 relative overflow-hidden block">
       {/* 3D Tech Shapes */}
       <div className="tech-shape tech-shape-prism absolute top-10 left-10 w-16 h-16 opacity-40"></div>
       <div className="tech-shape tech-shape-sphere absolute bottom-10 right-10 w-20 h-20 opacity-30"></div>
@@ -99,131 +97,91 @@ export const AboutSection = ({ aboutRef }) => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 mb-16">
-          <div className="space-y-6">
-            <div className="minimal-card bg-purple-500/5 backdrop-blur-lg border border-purple-500/20 rounded-xl p-8 scroll-animate">
-              <h3 className="text-2xl font-semibold mb-4 text-purple-400">My Journey</h3>
-              <p className="text-white/70 leading-relaxed mb-4">
-                Motivated and adaptable Frontend Developer with strong experience in building 
-                modern web applications using React.js and TypeScript. Passionate about creating 
-                intuitive user interfaces and delivering exceptional user experiences.
-              </p>
-              <p className="text-white/70 leading-relaxed">
-                I specialize in developing responsive, high-performance web applications with 
-                clean, maintainable code. My approach combines technical expertise with creative 
-                problem-solving to deliver solutions that exceed expectations.
-              </p>
-              
-              {/* Subtle tech shape in the background */}
-              <div className="tech-shape tech-shape-cube absolute bottom-4 right-4 w-10 h-10 opacity-20"></div>
-            </div>
-
-            <div className="minimal-card bg-purple-500/5 backdrop-blur-lg border border-purple-500/20 rounded-xl p-8 scroll-animate scroll-animate-delay-1 relative">
-              <h3 className="text-2xl font-semibold mb-4 text-purple-400">Personal Info</h3>
-              <div className="space-y-3">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
-                    <Calendar className="h-5 w-5 text-white" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-white/50">Date of Birth</p>
-                    <p className="text-white">May 15, 1995</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
-                    <MapPin className="h-5 w-5 text-white" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-white/50">Location</p>
-                    <p className="text-white">New York, USA</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
-                    <Briefcase className="h-5 w-5 text-white" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-white/50">Employment</p>
-                    <p className="text-white">Available for hire</p>
-                  </div>
-                </div>
-              </div>
-              
-              {/* Circuit path in the background */}
-              <svg className="circuit-path absolute bottom-2 right-2 opacity-20" width="100" height="100" viewBox="0 0 100 100">
-                <path d="M10,10 L90,10 L90,90 L10,90 Z" stroke="rgba(147, 51, 234, 0.3)" strokeWidth="1" fill="none" />
-                <circle cx="10" cy="10" r="2" fill="rgba(168, 85, 247, 0.6)" className="animate-ping" />
-                <circle cx="90" cy="90" r="2" fill="rgba(168, 85, 247, 0.6)" className="animate-ping" style={{ animationDelay: '1s' }} />
-              </svg>
-            </div>
+        {/* My Journey Section */}
+        <div className="mb-16 block">
+          <div className="minimal-card bg-purple-500/5 backdrop-blur-lg border border-purple-500/20 rounded-xl p-8 scroll-animate block">
+            <h3 className="text-2xl font-semibold mb-4 text-purple-400">My Journey</h3>
+            <p className="text-white/70 leading-relaxed mb-4">
+              Motivated and adaptable Frontend Developer with strong experience in building 
+              modern web applications using React.js and TypeScript. Passionate about creating 
+              intuitive user interfaces and delivering exceptional user experiences.
+            </p>
+            <p className="text-white/70 leading-relaxed">
+              I specialize in developing responsive, high-performance web applications with 
+              clean, maintainable code. My approach combines technical expertise with creative 
+              problem-solving to deliver solutions that exceed expectations.
+            </p>
+            
+            {/* Subtle tech shape in the background */}
+            <div className="tech-shape tech-shape-cube absolute bottom-4 right-4 w-10 h-10 opacity-20"></div>
           </div>
-
-          <div>
-            <div className="minimal-card bg-purple-500/5 backdrop-blur-lg border border-purple-500/20 rounded-xl p-8 h-full scroll-animate scroll-animate-delay-2 relative">
-              <h3 className="text-2xl font-semibold mb-6 text-purple-400">Skills & Expertise</h3>
-              
-              <div className="space-y-6" ref={techStackRef}>
-                {skills.map((skillGroup, groupIndex) => (
-                  <div key={skillGroup.category} className="tech-stack-group" style={{ animationDelay: `${groupIndex * 200}ms` }}>
-                    <h4 className="text-lg font-medium text-white mb-3">{skillGroup.category}</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {skillGroup.items.map((skill, skillIndex) => (
-                        <span 
-                          key={skill}
-                          className="tech-stack-item bg-gradient-to-r from-purple-500/20 to-pink-500/20 text-purple-300 border border-purple-500/30 px-3 py-1 rounded-full text-sm hover:scale-105 transition-transform"
-                          style={{ animationDelay: `${groupIndex * 200 + skillIndex * 100}ms` }}
-                        >
-                          {skill}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                ))}
+        </div>
+        
+        {/* Soft Skills Section */}
+        <div className="mb-16 block">
+          <h3 className="text-2xl font-semibold mb-8 text-center text-purple-400 scroll-animate">Soft Skills</h3>
+          <div className="grid md:grid-cols-2 gap-6 block">
+            <div className="minimal-card bg-purple-500/5 backdrop-blur-lg border border-purple-500/20 rounded-xl p-6 flex items-center gap-4 scroll-animate" style={{transitionDelay: '100ms'}}>
+              <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center relative">
+                <Users className="h-6 w-6 text-white" />
+                {/* Subtle orbit effect */}
+                <div className="absolute inset-0 rounded-full border border-purple-400/20 animate-[spin_10s_linear_infinite]"></div>
               </div>
-              
-              {/* Tech grid in the background */}
-              <div className="tech-grid absolute bottom-4 right-4 opacity-20">
-                <div className="grid grid-cols-3 gap-1">
-                  {Array.from({ length: 9 }).map((_, i) => (
-                    <div 
-                      key={i} 
-                      className="tech-grid-item w-2 h-2"
-                      style={{ animationDelay: `${i * 100}ms` }}
-                    />
-                  ))}
-                </div>
+              <div>
+                <h4 className="text-lg font-semibold text-white">Team Collaboration</h4>
+                <p className="text-white/70">Cross-team collaboration and agile practices</p>
+              </div>
+            </div>
+            
+            <div className="minimal-card bg-purple-500/5 backdrop-blur-lg border border-purple-500/20 rounded-xl p-6 flex items-center gap-4 scroll-animate" style={{transitionDelay: '200ms'}}>
+              <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center relative">
+                <Calendar className="h-6 w-6 text-white" />
+                {/* Subtle orbit effect */}
+                <div className="absolute inset-0 rounded-full border border-purple-400/20 animate-[spin_10s_linear_infinite]"></div>
+              </div>
+              <div>
+                <h4 className="text-lg font-semibold text-white">Time Management</h4>
+                <p className="text-white/70">Efficient prioritization and organization</p>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="mb-16">
-          <h3 className="text-2xl font-semibold mb-8 text-center text-purple-400 scroll-animate">Highlights</h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {highlights.map((highlight, index) => {
-              const Icon = highlight.icon;
-              return (
-                <div 
-                  key={highlight.title} 
-                  className="minimal-card bg-purple-500/5 backdrop-blur-lg border border-purple-500/20 rounded-xl p-6 flex flex-col items-center text-center scroll-animate relative overflow-hidden"
-                  style={{ animationDelay: `${index * 150}ms` }}
-                >
-                  {/* Tech shape in the background */}
-                  <div className={`tech-shape tech-shape-${index % 2 === 0 ? 'cube' : 'prism'} absolute ${index % 2 === 0 ? 'top-2 right-2' : 'bottom-2 left-2'} w-8 h-8 opacity-10`}></div>
-                  
-                  <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mb-4 relative">
-                    <Icon className="h-8 w-8 text-white" />
-                    {/* Subtle orbit effect */}
-                    <div className="absolute inset-0 rounded-full border border-purple-400/20 animate-[spin_10s_linear_infinite]"></div>
+        {/* Skills & Expertise Section */}
+        <div className="mb-16 block">
+          <h3 className="text-2xl font-semibold mb-8 text-center text-purple-400 scroll-animate">Skills & Expertise</h3>
+          <div className="minimal-card bg-purple-500/5 backdrop-blur-lg border border-purple-500/20 rounded-xl p-8 scroll-animate block relative">
+            <div className="space-y-6 block" ref={techStackRef}>
+              {skills.map((skillGroup, groupIndex) => (
+                <div key={skillGroup.category} className="tech-stack-group" style={{ animationDelay: `${groupIndex * 200}ms` }}>
+                  <h4 className="text-lg font-medium text-white mb-3">{skillGroup.category}</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {skillGroup.items.map((skill, skillIndex) => (
+                      <span 
+                        key={skill}
+                        className="tech-stack-item bg-gradient-to-r from-purple-500/20 to-pink-500/20 text-purple-300 border border-purple-500/30 px-3 py-1 rounded-full text-sm hover:scale-105 transition-transform"
+                        style={{ animationDelay: `${skillIndex * 100}ms` }}
+                      >
+                        {skill}
+                      </span>
+                    ))}
                   </div>
-                  <h4 className="text-lg font-semibold mb-2 text-white">{highlight.title}</h4>
-                  <p className="text-white/70">{highlight.description}</p>
                 </div>
-              );
-            })}
+              ))}
+            </div>
+            
+            {/* Tech grid in the background */}
+            <div className="tech-grid absolute bottom-4 right-4 opacity-20">
+              <div className="grid grid-cols-3 gap-1">
+                {Array.from({ length: 9 }).map((_, i) => (
+                  <div 
+                    key={i} 
+                    className="tech-grid-item w-2 h-2"
+                    style={{ animationDelay: `${i * 100}ms` }}
+                  />
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -320,7 +278,7 @@ export const ExperienceSection = ({ experienceRef }) => {
   ];
 
   return (
-    <section id="experience" ref={experienceRef} className="py-20 bg-gray-900 relative overflow-hidden">
+    <section id="experience" ref={experienceRef} className="py-20 bg-gray-900 relative overflow-hidden block">
       {/* 3D Tech Shapes */}
       <div className="tech-shape tech-shape-pyramid absolute top-20 right-20 w-16 h-16 opacity-30"></div>
       <div className="tech-shape tech-shape-sphere absolute bottom-40 left-20 w-12 h-12 opacity-20"></div>
@@ -343,10 +301,10 @@ export const ExperienceSection = ({ experienceRef }) => {
           </p>
         </div>
 
-        <div className="mb-20" ref={timelineRef}>
-          <div className="space-y-12">
+        <div className="mb-20 block" ref={timelineRef}>
+          <div className="space-y-12 block">
             {experiences.map((exp, index) => (
-              <div key={exp.title} className="timeline-item minimal-card bg-purple-500/5 backdrop-blur-lg border border-purple-500/20 rounded-xl p-8 relative">
+              <div key={exp.title} className="timeline-item minimal-card bg-purple-500/5 backdrop-blur-lg border border-purple-500/20 rounded-xl p-8 relative block">
                 {/* Vertical timeline connector */}
                 {index < experiences.length - 1 && (
                   <div className="absolute left-[2.5rem] top-[5.5rem] bottom-[-3rem] w-0.5 bg-gradient-to-b from-purple-500/50 to-transparent"></div>
