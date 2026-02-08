@@ -55,19 +55,6 @@ export const portfolioData = {
     ],
     projects: [
         {
-            id: "mobiguard",
-            title: "MobiGuard – Mobile Device Management (MDM & EMM Platform)",
-            description: "Developed device management features like security policies, WiFi setup, and app management. Integrated AI-assisted development workflows.",
-            highlights: [
-                "Managed teams and planned sprints; oversaw full deployment.",
-                "Worked with domain experts to create seamless enterprise business flows.",
-                "Designed responsive UI/UX dashboards using Android Management API.",
-                "Implemented AI-assisted prompt-based automation.",
-                "Added robust security features to protect data."
-            ],
-            technologies: ["TypeScript", "React JS", "Ant Design", "Styled-components", "AntV", "Google Play Store", "Coderabbit", "CI/CD", "LangChain", "OpenAI API"]
-        },
-        {
             id: "servicehub",
             title: "ServiceHub – IT Service, Assets & Ticketing Platform",
             description: "Developed Kanban-style ticketing and interactive dashboards. Designed and implemented 10+ high-security dashboard panels for MDM systems, improving user data visualization efficiency by 40%.",
@@ -78,17 +65,6 @@ export const portfolioData = {
                 "Added security measures to protect data and prevent XSS."
             ],
             technologies: ["React JS", "TypeScript", "Ant Design", "AntV", "Styled-components", "Jotai", "React-Query", "Coderabbit", "CI/CD", "AI tools"]
-        },
-        {
-            id: "healthtrack",
-            title: "HealthTrack – Healthcare Management Dashboard",
-            description: "Developed a dashboard to track patient appointments, treatment progress, and staff schedules.",
-            highlights: [
-                "Implemented interactive charts and real-time notifications.",
-                "Designed and implemented the front-end interface, created reusable UI components, and ensured smooth state management.",
-                "Built responsive layouts with secure access controls and optimised performance for real-time updates."
-            ],
-            technologies: ["React JS", "TypeScript", "Ant Design", "Recoil", "AntV Plots"]
         },
         {
             id: "getmt3",
@@ -109,6 +85,30 @@ export const portfolioData = {
                 "Used Recoil with Relay and GraphQL for efficient data handling."
             ],
             technologies: ["React", "TypeScript", "Styled-components", "Recoil", "Relay", "GraphQL", "Ant Design", "Storybook", "AntV Plot"]
+        },
+        {
+            id: "healthtrack",
+            title: "HealthTrack – Healthcare Management Dashboard",
+            description: "Developed a dashboard to track patient appointments, treatment progress, and staff schedules.",
+            highlights: [
+                "Implemented interactive charts and real-time notifications.",
+                "Designed and implemented the front-end interface, created reusable UI components, and ensured smooth state management.",
+                "Built responsive layouts with secure access controls and optimised performance for real-time updates."
+            ],
+            technologies: ["React JS", "TypeScript", "Ant Design", "Recoil", "AntV Plots"]
+        },
+        {
+            id: "mobiguard",
+            title: "MobiGuard – Mobile Device Management (MDM & EMM Platform)",
+            description: "Developed device management features like security policies, WiFi setup, and app management. Integrated AI-assisted development workflows.",
+            highlights: [
+                "Managed teams and planned sprints; oversaw full deployment.",
+                "Worked with domain experts to create seamless enterprise business flows.",
+                "Designed responsive UI/UX dashboards using Android Management API.",
+                "Implemented AI-assisted prompt-based automation.",
+                "Added robust security features to protect data."
+            ],
+            technologies: ["TypeScript", "React JS", "Ant Design", "Styled-components", "AntV", "Google Play Store", "Coderabbit", "CI/CD", "LangChain", "OpenAI API"]
         }
     ],
     skills: {

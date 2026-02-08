@@ -5,6 +5,7 @@ import { About } from '../components/portfolio/refined/About';
 import { Experience } from '../components/portfolio/refined/Experience';
 import { Projects } from '../components/portfolio/refined/Projects';
 import { Skills } from '../components/portfolio/refined/Skills';
+import { SoftSkills } from '../components/portfolio/refined/SoftSkills';
 import { EducationAwards } from '../components/portfolio/refined/EducationAwards';
 import { Contact } from '../components/portfolio/refined/Contact';
 import { Footer } from '../components/portfolio/ModernFooter';
@@ -38,6 +39,7 @@ const ModernPortfolio = () => {
                 { id: 'experience', ref: experienceRef },
                 { id: 'projects', ref: projectsRef },
                 { id: 'skills', ref: { current: document.getElementById('skills') } },
+                { id: 'soft-skills', ref: { current: document.getElementById('soft-skills') } },
                 { id: 'education', ref: { current: document.getElementById('education') } },
                 { id: 'contact', ref: contactRef }
             ];
@@ -98,7 +100,7 @@ const ModernPortfolio = () => {
                     </div>
 
                     <div className="hidden md:flex items-center space-x-8">
-                        {['About', 'Experience', 'Projects', 'Skills', 'Education', 'Contact'].map((item) => (
+                        {['About', 'Experience', 'Projects', 'Skills', 'Soft-Skills', 'Education', 'Contact'].map((item) => (
                             <button
                                 key={item}
                                 onClick={() => scrollToSection(item.toLowerCase())}
@@ -135,7 +137,7 @@ const ModernPortfolio = () => {
                 {isMenuOpen && (
                     <div className="md:hidden mt-4 pb-4 border-t border-purple-500/20">
                         <div className="flex flex-col space-y-4 pt-4">
-                            {['About', 'Experience', 'Projects', 'Skills', 'Education', 'Contact'].map((item) => (
+                            {['About', 'Experience', 'Projects', 'Skills', 'Soft-Skills', 'Education', 'Contact'].map((item) => (
                                 <button
                                     key={item}
                                     onClick={() => scrollToSection(item.toLowerCase())}
@@ -159,6 +161,7 @@ const ModernPortfolio = () => {
             <Experience experienceRef={experienceRef} />
             <Projects projectsRef={projectsRef} />
             <Skills />
+            <SoftSkills />
             <EducationAwards />
             <Contact
                 contactRef={contactRef}

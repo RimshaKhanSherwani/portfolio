@@ -3,6 +3,16 @@ import { ExternalLink, Github, Code, Layout, Cpu } from 'lucide-react';
 import { portfolioData } from '../../../data/portfolioData';
 import { SectionTitle } from './CommonComponents';
 
+import workspaceImg from '../../../assets/workspace/workspace01.png';
+import serviceHubImg from '../../../assets/serviceHub/serviceHub01.png';
+import mt3Img from '../../../assets/mt3/mt301.png';
+
+const projectImageMap: Record<string, string> = {
+    workspace: workspaceImg,
+    servicehub: serviceHubImg,
+    getmt3: mt3Img,
+};
+
 export const Projects = ({ projectsRef }: { projectsRef: React.RefObject<any> }) => {
     const [activeCategory, setActiveCategory] = useState('All');
 
@@ -20,9 +30,17 @@ export const Projects = ({ projectsRef }: { projectsRef: React.RefObject<any> })
                             className="group bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl overflow-hidden hover:border-purple-500/50 transition-all duration-500 hover:-translate-y-2 flex flex-col h-full scroll-animate shadow-2xl"
                             style={{ transitionDelay: `${index * 100}ms` }}
                         >
-                            <div className="relative h-48 overflow-hidden bg-gradient-to-br from-purple-600/20 to-pink-600/20 flex items-center justify-center">
-                                <div className="absolute inset-0 bg-gray-900/40 group-hover:bg-transparent transition-colors duration-500" />
-                                <Layout className="w-16 h-16 text-purple-400 opacity-40 group-hover:scale-110 transition-transform duration-500" />
+                            <div className="relative h-56 overflow-hidden bg-gradient-to-br from-purple-600/20 to-pink-600/20 flex items-center justify-center">
+                                {projectImageMap[project.id] ? (
+                                    <img
+                                        src={projectImageMap[project.id]}
+                                        alt={project.title}
+                                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                    />
+                                ) : (
+                                    <Layout className="w-16 h-16 text-purple-400 opacity-40 group-hover:scale-110 transition-transform duration-500" />
+                                )}
+                                <div className="absolute inset-0 bg-gray-900/20 group-hover:bg-transparent transition-colors duration-500" />
                                 <div className="absolute top-4 right-4 bg-purple-500 text-white text-[10px] font-bold px-2 py-1 rounded uppercase tracking-tighter shadow-lg">
                                     Project
                                 </div>

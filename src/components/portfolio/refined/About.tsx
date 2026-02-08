@@ -20,11 +20,11 @@ export const About = ({ aboutRef }: { aboutRef: React.RefObject<any> }) => {
             <div className="container mx-auto px-6 relative z-10">
                 <SectionTitle gradientText="Me">About</SectionTitle>
 
-                <div className="max-w-4xl mx-auto">
-                    <div className="bg-purple-500/5 backdrop-blur-lg border border-purple-500/20 rounded-2xl p-8 md:p-12 scroll-animate shadow-2xl">
+                <div className="max-w-7xl mx-auto">
+                    <div className="bg-purple-500/5 backdrop-blur-lg border border-purple-500/20 rounded-2xl p-8 md:p-12 scroll-animate shadow-2xl text-center">
                         <h3 className="text-2xl font-bold mb-6 text-purple-400">Professional Summary</h3>
                         <div ref={textRef} className="space-y-4">
-                            <p className="text-xl text-white/90 leading-relaxed font-light">
+                            <p className="text-xl text-white/90 leading-relaxed font-light mx-auto text-justify">
                                 {portfolioData.summary}
                             </p>
                         </div>

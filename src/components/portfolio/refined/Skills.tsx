@@ -11,8 +11,7 @@ export const Skills = () => {
         { title: "Frontend", icon: Layers, items: skills.frontend },
         { title: "State & Data", icon: Database, items: skills.stateData },
         { title: "Backend & Tools", icon: Settings, items: skills.backendTools },
-        { title: "DevOps & AI", icon: Brain, items: skills.devOpsAI },
-        { title: "Soft Skills", icon: Brain, items: skills.softSkills }
+        { title: "DevOps & AI", icon: Brain, items: skills.devOpsAI }
     ];
 
     return (
