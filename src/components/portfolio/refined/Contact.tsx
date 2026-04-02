@@ -1,5 +1,4 @@
-import React from 'react';
-import { Mail, Github, MapPin, Send, ExternalLink, Phone } from 'lucide-react';
+import { Github, Linkedin, Mail, MapPin, Phone } from 'lucide-react';
 import { portfolioData } from '../../../data/portfolioData';
 import { SectionTitle } from './CommonComponents';
 
@@ -10,19 +9,19 @@ export const Contact = ({ contactRef, formData, handleInputChange, handleSubmit 
         { icon: Mail, label: 'Email', value: personalInfo.email, href: `mailto:${personalInfo.email}`, color: 'text-blue-400' },
         { icon: Phone, label: 'Phone', value: personalInfo.phone, href: `tel:${personalInfo.phone.replace(/\s/g, '')}`, color: 'text-green-400' },
         { icon: Github, label: 'GitHub', value: 'RimshaKhanSherwani', href: 'https://github.com/RimshaKhanSherwani', color: 'text-purple-400' },
-        { icon: MapPin, label: 'Location', value: personalInfo.location, href: '#', color: 'text-red-400' }
+        { icon: MapPin, label: 'Location', value: personalInfo.location, href: '#', color: 'text-red-400' },
+        { icon: Linkedin, label: 'LinkedIn', value: 'Rimsha Khan Sherwani', href: 'https://www.linkedin.com/in/rimsha-khan-4696693b0/', color: 'text-blue-400' }
     ];
 
     return (
         <section id="contact" ref={contactRef} className="py-24 bg-gray-900 relative overflow-hidden">
             <div className="container mx-auto px-6 relative z-10">
-                <SectionTitle gradientText="Touch">Get In</SectionTitle>
 
                 <div className="max-w-6xl mx-auto grid lg:grid-cols-5 gap-12">
                     {/* Info Side */}
-                    <div className="lg:col-span-2 space-y-8">
-                        <div className="scroll-animate">
-                            <h3 className="text-2xl font-bold text-white mb-6 uppercase">Let's Connect</h3>
+                    <div className="lg:col-span-5 space-y-8">
+                        <div className="scroll-animate text-center">
+                            <SectionTitle gradientText="Connect">Let's </SectionTitle>
                             <p className="text-white/60 leading-relaxed text-lg">
                                 I'm always open to discussing new projects, creative ideas or opportunities to be part of your vision.
                             </p>
@@ -49,7 +48,7 @@ export const Contact = ({ contactRef, formData, handleInputChange, handleSubmit 
                     </div>
 
                     {/* Form Side */}
-                    <div className="lg:col-span-3 scroll-animate" style={{ transitionDelay: '300ms' }}>
+                    {/* <div className="lg:col-span-3 scroll-animate" style={{ transitionDelay: '300ms' }}>
                         <form onSubmit={handleSubmit} className="bg-white/5 backdrop-blur-xl border border-white/10 p-10 rounded-3xl space-y-8 shadow-2xl">
                             <div className="grid md:grid-cols-2 gap-8">
                                 <div className="space-y-3">
@@ -95,7 +94,7 @@ export const Contact = ({ contactRef, formData, handleInputChange, handleSubmit 
                                 Send Message <Send className="h-5 w-5" />
                             </button>
                         </form>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </section>

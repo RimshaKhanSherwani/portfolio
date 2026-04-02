@@ -1,9 +1,9 @@
-import { Mail, Github, MapPin, Code, Database, Smartphone, Briefcase, Calendar, Award, GraduationCap } from 'lucide-react';
+import { Github, Mail, MapPin } from 'lucide-react';
 
 export const portfolioData = {
     personalInfo: {
         name: "Rimsha Sherwani",
-        title: "Mid - Senior Software Developer",
+        title: "Software Engineer | SaaS Architecture + Frontend Developer & AI Prompt Engnieer",
         phone: "+92 3010501661",
         email: "rimshasherwani@gmail.com",
         location: "Islamabad, Pakistan",
@@ -14,10 +14,10 @@ export const portfolioData = {
             { icon: MapPin, label: "Location", value: "Islamabad, Pakistan", href: "https://maps.google.com/?q=Islamabad,Pakistan" }
         ]
     },
-    summary: "Results-oriented Mid-Senior Software Engineer with 3+ years of experience specializing in React.js, TypeScript, and Frontend Strategies. Expert in building scalable enterprise solutions across Healthcare, HR Management, 3D Model Viewer CMS and Mobile Device Management (MDM) and AI. Proven track record of optimizing CI/CD pipelines, leading cross-functional teams, and implementing AI-driven development workflows to reduce delivery cycles by 20-30%. Strong focus on 3D product visualization, state management, and performance tuning for high-traffic web applications.",
+    summary: "Results-oriented Software Engineer as a SaaS Frontend Developer  with 3+ years of experience specializing in React.js, TypeScript, and Frontend Strategies. Expert in building scalable enterprise solutions across Healthcare, HR Management, 3D Model Viewer CMS and Mobile Device Management (MDM) and AI. Proven track record of optimizing CI/CD pipelines, leading cross-functional teams, and implementing AI-driven development workflows to reduce delivery cycles by 20-30%. Strong focus on 3D product visualization, state management, and performance tuning for high-traffic web applications.",
     experience: [
         {
-            role: "Mid-Senior Front-End Developer – Technical Strategist",
+            role: "Front-End Developer – Technical Strategist",
             company: "Embrace-IT (PVT) Ltd, Islamabad, Pakistan",
             duration: "September 2025 – Present",
             highlights: [

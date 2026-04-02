@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { portfolioData } from '../../../data/portfolioData';
-import { SectionTitle, CircuitPath } from './CommonComponents';
 import { animateTextReveal } from '../../../utils/animations';
+import { CircuitPath, SectionTitle } from './CommonComponents';
 
 export const About = ({ aboutRef }: { aboutRef: React.RefObject<any> }) => {
     const textRef = useRef(null);
@@ -29,12 +29,11 @@ export const About = ({ aboutRef }: { aboutRef: React.RefObject<any> }) => {
                             </p>
                         </div>
 
-                        <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                        <div className="mt-12 grid grid-cols-2 md:grid-cols-3 gap-6 text-center">
                             {[
                                 { label: 'Experience', value: '3+ Years' },
-                                { label: 'Projects', value: '15+' },
+                                { label: 'Projects', value: '5+' },
                                 { label: 'Performance', value: '+30%' },
-                                { label: 'Delivery', value: '-20%' }
                             ].map((stat, i) => (
                                 <div key={i} className="p-4 rounded-xl bg-white/5 border border-white/10 hover:border-purple-500/30 transition-colors">
                                     <div className="text-2xl font-bold text-white mb-1">{stat.value}</div>

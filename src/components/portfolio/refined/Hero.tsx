@@ -1,7 +1,7 @@
-import React, { useRef, useEffect } from 'react';
-import { ExternalLink, Mail, Github } from 'lucide-react';
-import { createParticleSystem } from '../../../utils/animations';
+import { ExternalLink, Mail } from 'lucide-react';
+import React, { useEffect } from 'react';
 import { portfolioData } from '../../../data/portfolioData';
+import { createParticleSystem } from '../../../utils/animations';
 
 export const Hero = ({ heroRef, scrollToSection }: { heroRef: React.RefObject<any>, scrollToSection: (id: string) => void }) => {
     useEffect(() => {
@@ -52,12 +52,6 @@ export const Hero = ({ heroRef, scrollToSection }: { heroRef: React.RefObject<an
                             View My Work <ExternalLink className="h-5 w-5" />
                         </button>
 
-                        <button
-                            onClick={() => scrollToSection('contact')}
-                            className="px-8 py-3 text-lg font-semibold rounded-lg border-2 border-purple-400 text-purple-400 hover:bg-purple-400 hover:text-white transition-all flex items-center gap-2"
-                        >
-                            Get In Touch <Mail className="h-5 w-5" />
-                        </button>
                     </div>
 
                     <div className="flex justify-center gap-6 scroll-animate">
