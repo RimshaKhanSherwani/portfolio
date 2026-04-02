@@ -1,16 +1,20 @@
+import { Cpu, Layout } from 'lucide-react';
 import React, { useState } from 'react';
-import { ExternalLink, Github, Code, Layout, Cpu } from 'lucide-react';
 import { portfolioData } from '../../../data/portfolioData';
 import { SectionTitle } from './CommonComponents';
 
-import workspaceImg from '../../../assets/workspace/workspace01.png';
-import serviceHubImg from '../../../assets/serviceHub/serviceHub01.png';
+import healthTrackerImg from '../../../assets/Health/00.png';
+import mobiguardImg from '../../../assets/Mobiguard/00.png';
 import mt3Img from '../../../assets/mt3/mt301.png';
+import serviceHubImg from '../../../assets/serviceHub/serviceHub01.png';
+import workspaceImg from '../../../assets/workspace/workspace01.png';
 
 const projectImageMap: Record<string, string> = {
     workspace: workspaceImg,
     servicehub: serviceHubImg,
     getmt3: mt3Img,
+    mobiguard: mobiguardImg,
+    healthtrack: healthTrackerImg
 };
 
 export const Projects = ({ projectsRef }: { projectsRef: React.RefObject<any> }) => {
@@ -35,7 +39,7 @@ export const Projects = ({ projectsRef }: { projectsRef: React.RefObject<any> })
                                     <img
                                         src={projectImageMap[project.id]}
                                         alt={project.title}
-                                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                        className="w-full h-full object-cover group-hover:scale-100 transition-transform duration-700"
                                     />
                                 ) : (
                                     <Layout className="w-16 h-16 text-purple-400 opacity-40 group-hover:scale-110 transition-transform duration-500" />
@@ -80,9 +84,9 @@ export const Projects = ({ projectsRef }: { projectsRef: React.RefObject<any> })
                                             </div>
                                         ))}
                                     </div>
-                                    <button className="text-purple-400 hover:text-pink-400 flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest transition-colors group/btn">
+                                    {/* <button className="text-purple-400 hover:text-pink-400 flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest transition-colors group/btn">
                                         Case Study <ExternalLink className="h-3 w-3 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
-                                    </button>
+                                    </button> */}
                                 </div>
                             </div>
                         </div>

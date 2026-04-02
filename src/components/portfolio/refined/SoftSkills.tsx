@@ -1,36 +1,40 @@
-import React from 'react';
+import {
+    Clock,
+    Globe,
+    Handshake,
+    RefreshCw,
+    Users
+} from 'lucide-react';
 import { portfolioData } from '../../../data/portfolioData';
 import { SectionTitle, TechGrid } from './CommonComponents';
-import {
-    Brain,
-    Users,
-    Globe,
-    Lightbulb,
-    Handshake,
-    Mic2,
-    RefreshCw,
-    Ear,
-    Sparkles,
-    ShieldCheck,
-    Clock
-} from 'lucide-react';
 
 const softSkillMapping = [
-    { name: "Problem Solving", icon: Brain, description: "Analytical approach to complex technical challenges." },
-    { name: "Leadership", icon: Rocket, description: "Leading teams and mentoring junior developers." },
-    { name: "Cross-Cultural Collaboration", icon: Globe, description: "Working effectively with global distributed teams." },
-    { name: "Critical Thinking", icon: Lightbulb, description: "Evaluating solutions with a long-term perspective." },
-    { name: "Negotiation", icon: Handshake, description: "Balancing technical debt and business requirements." },
-    { name: "Public Speaking", icon: Mic2, description: "Presenting technical concepts to stakeholders." },
-    { name: "Adaptability", icon: RefreshCw, description: "Thriving in fast-paced, evolving environments." },
-    { name: "Active Listening", icon: Ear, description: "Understanding client needs and team feedback." },
-    { name: "Innovation", icon: Sparkles, description: "Continuously improving processes and workflows." },
-    { name: "Responsibility", icon: ShieldCheck, description: "Ownership of deliverables and production stability." },
-    { name: "Team & Time Mgmt", icon: Clock, description: "Prioritizing tasks and ensuring timely delivery." }
+  {
+    name: "Team Empowerment",
+    icon: Users,
+    description: "Ability to guide, motivate, and inspire teams to achieve goals efficiently."
+  },
+  {
+    name: "Cross-Cultural Collaboration",
+    icon: Globe,
+    description: "Experience working effectively with diverse teams across different cultures and regions."
+  },
+  {
+    name: "Negotiation",
+    icon: Handshake,
+    description: "Skilled in reaching mutually beneficial agreements through clear communication and strategy."
+  },
+  {
+    name: "Adaptability",
+    icon: RefreshCw,
+    description: "Quickly adjusts to changing environments, technologies, and project requirements."
+  },
+  {
+    name: "Team & Time Management",
+    icon: Clock,
+    description: "Efficiently manages time and collaborates with teams to meet deadlines and deliver results."
+  }
 ];
-
-// Fallback for Rocket since it wasn't in my initial plan but used in mapping
-import { Rocket } from 'lucide-react';
 
 export const SoftSkills = () => {
     const { softSkills } = portfolioData.skills;

@@ -26,7 +26,17 @@ export const portfolioData = {
                 "Performance Optimization: Diagnosed and resolved critical bottlenecks in dashboard rendering, improving Lighthouse performance scores by 30% through code-splitting and memoization.",
                 "Security & Compliance: Engineered secure MDM workflows and security panels, ensuring 100% compliance with industry-standard data protection protocols."
             ],
-            technologies: ["React", "TypeScript", "Micro-Frontends", "Azure DevOps", "AI Agents", "Lighthouse"]
+            technologies: ["TypeScript",
+                "React JS",
+                "Ant Design",
+                "Styled Components",
+                "AntV",
+                "Google Play Store & Device Policies Integration",
+                "CodeRabbit",
+                "CI/CD",
+                "GitHub Copilot",
+                "LangChain",
+                "OpenAI API"]
         },
         {
             role: "Junior Front-End Developer – Technical Strategist",
@@ -37,7 +47,7 @@ export const portfolioData = {
                 "Scalability: Developed a centralized Storybook UI Library, increasing development velocity by 25% across multiple projects through reusable, atomic components.",
                 "Data Integration: Streamlined data fetching strategies using GraphQL and Relay, reducing API payload sizes and improving mobile load times."
             ],
-            technologies: ["React", "Jotai", "Recoil", "Storybook", "GraphQL", "Relay"]
+            technologies: ["React", "TypeScript", "Styled-components", "Recoil", "Relay", "GraphQL", "Ant Design", "Storybook", "AntV Plot"]
         },
         {
             role: "Front-End Internship",
@@ -50,7 +60,7 @@ export const portfolioData = {
                 "Debugging: Assisted senior engineers in optimising front-end performance.",
                 "Component Creation: Built basic UI components and layouts reused in production."
             ],
-            technologies: ["React", "SQL", "MongoDB", "Agile", "UI/UX"]
+            technologies: ["React JS", "TypeScript", "Ant Design", "Recoil", "AntV Plots"]
         }
     ],
     projects: [
